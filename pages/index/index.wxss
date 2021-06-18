@@ -1,0 +1,61 @@
+/**index.wxss**/
+page{
+  background: #f3f7f7;
+ }
+
+ .input_box {
+  display: flex;
+  background: #fff;
+  width: 80%;
+  height: 40px;
+  margin: 40rpx auto;
+  border: 3rpx solid #faca82;
+  border-radius: 10rpx;
+}
+.user_id {
+  margin: auto 10px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.select-wrap {
+  width: 80%;
+  background: #fff;
+  margin: 40rpx auto;
+  border: 3rpx solid #faca82;
+  border-radius: 10rpx;
+}
+
+.selected {
+  margin-top: 50%;
+}
+
+.button_box {
+  width: 80%;
+  margin: 40rpx auto;
+  display: flex;
+  flex-direction: row;
+}
+#btn {
+  background-color: rgb(252, 126, 67);
+  color: white;
+  border-radius: 98rpx;
+  font-size: 14px;
+}
+/** 修改button默认的点击态样式类**/
+#btn:hover {
+  background-color: #000;
+}
+
+.image_box{
+  width: 80%;
+  margin: 40rpx auto;
+  border: 1rpx solid #faca82;
+  position: relative;
+  background-repeat:no-repeat;
+  background-position: center;
+ }
+ .img{
+  width: 100%;
+  margin: 20rpx auto;
+ }

@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="info">
+  <view class="input_box">
+    <input class="user_id" name="userID" placeholder="请输入Gitee/Github的ID" bindinput ="input_user" ></input>
+  </view>
+
+  <view class="select-wrap">
+    <select id="select" options="{{options}}" key="city_id" text="city_name" bind:change="change"></select>
+  </view>
+
+  <view class="button_box">
+    <button id="btn" style="width:unset" bindtap="show">徽章展示</button>
+    <button id="btn" style="width:unset" bindtap="download">徽章下载</button>
+  </view>
+  <view class="image_box">
+    <image class="img" src="{{imageUrl}}" mode="aspectFill"></image> 
+  </view>
+</view>
