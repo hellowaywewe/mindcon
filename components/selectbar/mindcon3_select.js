@@ -9,7 +9,7 @@ Component({
       type: Object,
       value: {
         id: 'All',
-        name: 'MindCon 所有城市'
+        name: '请选择您参与的SIG会议'
       }
     },
     key: {

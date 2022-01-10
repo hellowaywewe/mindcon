@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="info">
+  <view class="head_box" hidden="true"></view>
+
+  <view class="input_box">
+    <input class="user_id" name="userID" placeholder="请输入您的B站账号" bindinput="input_user"></input>
+  </view>
+
+  <view class="select-wrap">
+    <select id="select" options="{{options}}" key="sig_id" text="sig_name" bind:change="change"></select>
+  </view>
+  <view class="image_box">
+    <image class="img" src="{{imageUrl}}" mode="aspectFill"></image>
+  </view>
+  <view class="button_box">
+    <button id="btn" style="width:unset" bindtap="show">SIG徽章展示</button>
+    <button id="btn" style="width:unset" bindtap="download">SIG徽章获取</button>
+  </view>
+  <view class="button_box">
+    <button id="btn" style="width:unset" bindtap="all_show">完整拼图展示</button>
+    <button id="btn" style="width:unset" bindtap="all_download">完整拼图获取</button>
+  </view>
+  <view class="bottom_box">
+    <view class="prompt_box">
+      <text id="prompt_txt" style="text-align: center;">「点亮SIG，解锁徽章，集齐拼图」宝典：</text>
+      <text id="prompt_txt"> \n 1. 打卡SIG日常会议，即可获取您参与的会议专属徽章！</text>
+      <text id="prompt_txt"> \n 2. 打卡所有SIG会议，即可集齐徽章完整拼图！</text>
+      <text id="prompt_txt"> \n 3. 徽章每日更新1次，大家可于次日获取。</text>
+      <text id="prompt_txt"> \n 4. 会议全部打卡完成，才可获取完整拼图。</text>
+    </view>
+  </view>
+</view>

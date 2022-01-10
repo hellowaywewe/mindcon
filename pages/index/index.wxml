@@ -1,7 +1,9 @@
 <!--index.wxml-->
 <view class="info">
+  <view class="head_box" hidden="true"></view>
+
   <view class="input_box">
-    <input class="user_id" name="userID" placeholder="请输入Gitee/Github的ID" bindinput ="input_user" ></input>
+    <input class="user_id" name="userID" placeholder="请输入Gitee/Github的ID" bindinput="input_user"></input>
   </view>
 
   <view class="select-wrap">
@@ -10,9 +12,20 @@
 
   <view class="button_box">
     <button id="btn" style="width:unset" bindtap="show">徽章展示</button>
-    <button id="btn" style="width:unset" bindtap="download">徽章下载</button>
+    <button id="btn" style="width:unset" bindtap="download">徽章获取</button>
   </view>
   <view class="image_box">
-    <image class="img" src="{{imageUrl}}" mode="aspectFill"></image> 
+    <image class="img" src="{{imageUrl}}" mode="aspectFill"></image>
+  </view>
+  <view class="bottom_box">
+    <view class="prompt_box">
+      <text id="prompt_txt" style="text-align: center;">「点亮城市，解锁徽章」宝典：</text>
+      <text id="prompt_txt"> \n 1. 成功为MindSpore任一相关仓/TinyMS仓点star或提issue，即可获取当日属于您的城市徽章！</text>
+      <text id="prompt_txt"> \n 2. 可复制如下链接到浏览器中操作：</text>
+      <text id="link_txt" selectable='true' user-select='true'>https://gitee.com/mindspore</text>
+      <text id="link_txt" selectable='true' user-select='true'>https://github.com/mindspore-ai</text>
+      <text id="link_txt" selectable='true' user-select='true'>https://github.com/tinyms-ai/tinyms</text>
+      <text id="prompt_txt"> \n 3. 徽章每日更新2次，时间为11:30/17:30。</text>
+    </view>
   </view>
 </view>

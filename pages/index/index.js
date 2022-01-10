@@ -72,43 +72,42 @@ Page({
   },
   show (e){
     var that = this;
-    let imageUrl = "https://mindcon.obs.cn-north-4.myhuaweicloud.com/" + `${this.data.selected.id}` + "/" + this.data.userID + ".jpeg"
+    let imageUrl = "https://mindcon.obs.cn-north-4.myhuaweicloud.com/" + `${this.data.selected.id}` + "/" + this.data.userID + ".jpg"
     wx.request({
       url: imageUrl,
       method: 'GET',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      responseType: 'arraybuffer',
       success: function (res) {
         if (res.statusCode === 404){
           wx.showToast({
-            title: `徽章不存在，请认真检查您所属城市及Github/Gitee的ID！`,
+            title: `徽章不存在，确认所属城市及Github/Gitee的ID！`,
             icon: "none"
           }),
           that.setData({
             imageUrl: ""
           })
         } else{
-          that.setData({
+          let imageUrl ='data:image/png;base64,' + wx.arrayBufferToBase64(res.data);
+          that.setData({    
             imageUrl: imageUrl
           })
         }      
       },
-      fail: function (){
+      fail: function (res){
         wx.showToast({
           title: `服务器出错！`,
-          icon: "none"
+          icon: "error"
         })
       }
     })
   },
   download: function(e) {
     wx.downloadFile({
-      url: "https://mindcon.obs.cn-north-4.myhuaweicloud.com/" + `${this.data.selected.id}` + "/" + this.data.userID + ".jpeg",//图片的地址
+      url: "https://mindcon.obs.cn-north-4.myhuaweicloud.com/" + `${this.data.selected.id}` + "/" + this.data.userID + ".jpg",//图片的地址
       type: "image",
       success:function(res){
         const tempFilePath = res.tempFilePath  //如果请求成功，则通过res中的tempFilePath 得到需要下载的图片地址
-        if(tempFilePath.substring(tempFilePath.lastIndexOf('.') + 1) != 'jpeg'){
+        if(tempFilePath.substring(tempFilePath.lastIndexOf('.') + 1) != 'jpg'){
           wx.showToast({
             title: `徽章不存在!`,
             icon: 'error'
